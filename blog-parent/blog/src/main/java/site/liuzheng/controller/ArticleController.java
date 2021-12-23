@@ -19,11 +19,21 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
     /**
      * 首页 文章列表
      */
     @PostMapping
     public Result listArticle(@RequestBody PageParams pageParams) {
         return articleService.listArticle(pageParams);
+    }
+
+    /**
+     * 首页 最热文章
+     */
+    @PostMapping("hot")
+    public Result hotArticle() {
+        int limit = 5;
+        return articleService.hotArticle(limit);
     }
 }
