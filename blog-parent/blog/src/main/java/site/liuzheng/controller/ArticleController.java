@@ -45,4 +45,12 @@ public class ArticleController {
         int limit = 5;
         return articleService.newArticles(limit);
     }
+
+    /**
+     * 首页 文章归档
+     */
+    @PostMapping("listArchives")
+    public Result listArchives() {
+        return articleService.listArchives();
+    }
 }

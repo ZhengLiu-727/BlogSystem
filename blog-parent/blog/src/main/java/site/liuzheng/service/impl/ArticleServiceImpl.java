@@ -6,6 +6,7 @@ import org.joda.time.DateTime;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import site.liuzheng.dao.dos.Archives;
 import site.liuzheng.dao.mapper.ArticleMapper;
 import site.liuzheng.dao.pojo.Article;
 import site.liuzheng.service.ArticleService;
@@ -70,6 +71,12 @@ public class ArticleServiceImpl implements ArticleService {
 
         List<Article> articles = articleMapper.selectList(queryWrapper);
         return Result.success(copyList(articles, false, false));
+    }
+
+    @Override
+    public Result listArchives() {
+        List<Archives> archivesList = articleMapper.listArchives();
+        return Result.success(archivesList);
     }
 
     private List<ArticleVo> copyList(List<Article> records, boolean isTag, boolean isAuthor) {
