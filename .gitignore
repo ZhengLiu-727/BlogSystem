@@ -1,6 +1,9 @@
 #忽略所有target目录
-blog/target/
+blog-parent/blog/target/
+
 #忽略所有.idea目录
 .idea/
+blog-parent/.idea
+
 #忽略所有.iml文件
 *.iml
