@@ -9,7 +9,7 @@ import site.liuzheng.vo.Result;
  * @author liuzheng
  */
 @RestController
-@GetMapping("users")
+@RequestMapping("users")
 public class UsersController {
 
     @Autowired
