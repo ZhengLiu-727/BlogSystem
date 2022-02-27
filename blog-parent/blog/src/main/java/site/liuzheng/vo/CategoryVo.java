@@ -3,11 +3,13 @@ package site.liuzheng.vo;
 import lombok.Data;
 
 @Data
-public class TagVo {
+public class CategoryVo {
 
     private String id;
 
-    private String tagName;
-
     private String avatar;
+
+    private String categoryName;
+
+    private String description;
 }

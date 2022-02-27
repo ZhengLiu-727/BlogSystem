@@ -1,6 +1,7 @@
 package site.liuzheng.service;
 
 import site.liuzheng.vo.Result;
+import site.liuzheng.vo.params.ArticleParam;
 import site.liuzheng.vo.params.PageParams;
 
 /**
@@ -34,4 +35,19 @@ public interface ArticleService {
      * @return
      */
     Result listArchives();
+
+    /**
+     * 查询文章
+     * @param articleId
+     * @return
+     */
+    Result findArticleById(Long articleId);
+
+
+    /**
+     * 发布文章
+     * @param articleParam
+     * @return
+     */
+    Result publish(ArticleParam articleParam);
 }

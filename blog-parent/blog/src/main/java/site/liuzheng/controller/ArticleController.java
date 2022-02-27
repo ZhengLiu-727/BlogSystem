@@ -1,12 +1,10 @@
 package site.liuzheng.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import site.liuzheng.service.ArticleService;
 import site.liuzheng.vo.Result;
+import site.liuzheng.vo.params.ArticleParam;
 import site.liuzheng.vo.params.PageParams;
 
 /**
@@ -52,5 +50,25 @@ public class ArticleController {
     @PostMapping("listArchives")
     public Result listArchives() {
         return articleService.listArchives();
+    }
+
+    /**
+     * 查询文章
+     * @param articleId
+     * @return
+     */
+    @PostMapping("view/{id}")
+    public Result findArticleById(@PathVariable("id") Long articleId){
+        return articleService.findArticleById(articleId);
+    }
+
+    /**
+     * 发布文章
+     * @param articleParam
+     * @return
+     */
+    @PostMapping("publish")
+    public Result publish(@RequestBody ArticleParam articleParam){
+        return articleService.publish(articleParam);
     }
 }
